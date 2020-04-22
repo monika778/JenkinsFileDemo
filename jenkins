@@ -1,0 +1,12 @@
+
+pipeline {
+   agent { node { label 'Ansible' } }
+
+   stages {
+      stage('Hello') {
+         steps {
+            sh "cd /tmp/mb &&  ansible-playbook test.yml -vv "
+         }
+      }
+   }
+}
